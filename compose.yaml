@@ -1,6 +1,6 @@
 services:
   jupyter:
-    image: jupyter/datascience-notebook:latest
+    build: .
     container_name: jupyter
     restart: unless-stopped
     user: "1000:100"
