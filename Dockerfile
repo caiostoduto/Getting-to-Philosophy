@@ -4,6 +4,9 @@ FROM jupyter/datascience-notebook:latest
 # Set environment variables
 USER root
 
+# Copy README.md into the container
+COPY README.md /home/jovyan/
+
 # Copy requirements.txt into the container
 COPY requirements.txt /tmp/
 
