@@ -1,0 +1,12 @@
+services:
+  jupyter:
+    image: jupyter/datascience-notebook:latest
+    container_name: jupyter
+    restart: unless-stopped
+    user: "1000:100"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./jupyter-config:/home/jovyan/.jupyter
+      - ./jupyter-data:/home/jovyan/.local/share/jupyter
