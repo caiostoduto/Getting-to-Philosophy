@@ -7,6 +7,9 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./notebooks:/home/jovyan/work
+      - ./work:/home/jovyan/work
+      - ./multistream:/home/jovyan/multistream
+      - ./output:/home/jovyan/output
+
       - ./jupyter-config:/home/jovyan/.jupyter
       - ./jupyter-data:/home/jovyan/.local/share/jupyter
