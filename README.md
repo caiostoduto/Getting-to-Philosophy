@@ -82,9 +82,9 @@ Open your browser and go to http://localhost:8888. You should see the Jupyter No
 
 - **Persistent Data**: Data, Jupyter configurations, and outputs are saved in the respective directories (`jupyter-config`, `jupyter-data`, `multistream`, `output`), ensuring they persist even if the Docker container is stopped.
 
-- **Stopping the Container**: You can stop the Docker container by pressing Ctrl+C in the terminal where it is running, or by using Docker commands:
+- **Stopping the Container**: You can stop the Docker container using Docker Compose:
 ```bash
-docker stop getting-to-philosophy
+docker compose down
 ```
 
 ## Notebooks Overview
