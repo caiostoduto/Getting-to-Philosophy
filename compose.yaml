@@ -1,7 +1,7 @@
 services:
   jupyter:
     build: .
-    container_name: jupyter
+    container_name: getting-to-philosophy
     restart: unless-stopped
     user: "1000:100"
     ports:
