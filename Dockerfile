@@ -4,6 +4,9 @@ FROM jupyter/datascience-notebook:latest
 # Set environment variables
 USER root
 
+# Remove the default 'work' directory
+RUN rm -rf /home/jovyan/work
+
 # Copy README.md into the container
 COPY README.md /home/jovyan/
 

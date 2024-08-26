@@ -7,7 +7,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./work:/home/jovyan/work
+      - ./notebooks:/home/jovyan/notebooks
       - ./multistream:/home/jovyan/multistream
       - ./output:/home/jovyan/output
 
