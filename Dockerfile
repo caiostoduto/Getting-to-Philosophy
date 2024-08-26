@@ -1,21 +1,21 @@
 # Use the official Jupyter Data Science Notebook as a base image
 FROM jupyter/datascience-notebook:latest
 
-# Set environment variables
-USER root
-
 # Remove the default 'work' directory
 RUN rm -rf /home/jovyan/work
 
-# Copy README.md into the container
-COPY README.md /home/jovyan/
+# Create a new directory for scripts
+RUN mkdir /tmp/scripts
 
-# Copy requirements.txt into the container
-COPY requirements.txt /tmp/
+# Copy requirements.txt and README.md into the container
+COPY requirements.txt README.md /tmp/
+
+# Copy scripts into the container
+COPY scripts/* /tmp/scripts/
+
+# Run script/md2ipynb.py to convert README.md to README.ipynb
+RUN python /tmp/scripts/md2ipynb.py /tmp/README.md /home/jovyan/README.ipynb
 
 # Install dependencies
 RUN pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt
-
-# Switch back to the jovyan user
-USER $NB_UID
