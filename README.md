@@ -59,7 +59,7 @@ cd getting-to-philosophy
 2. **Start the Docker container using Docker Compose**:
 
 ```bash
-docker compose up -d .
+docker compose up -d
 ```
 
 3. **Get the Jupyter Notebook token**:
